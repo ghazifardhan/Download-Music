@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main { res.srcDirs = ['src/main/res', 'src/main/res/drawable', 'src/main/res/menu'] }
+    }
 }
 
 dependencies {
@@ -25,7 +28,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
@@ -35,10 +37,14 @@ dependencies {
     compile 'com.squareup.okio:okio:1.7.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
     compile 'com.liulishuo.filedownloader:library:1.4.1'
+    compile 'com.google.firebase:firebase-ads:10.2.0'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'com.github.esafirm:RxDownloader:1.0.1'
-    compile 'com.google.firebase:firebase-ads:10.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'br.com.bemobi:medescope:1.1.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
 }
-
 apply plugin: 'com.google.gms.google-services'
+
+

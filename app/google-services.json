@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "594750994156",
+    "project_id": "firebase-download-music"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594750994156:android:835b08601878a07b",
+        "android_client_info": {
+          "package_name": "com.ghazifardhan.downloadmusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaleBICvdk8q_MTbxK4XWmoal3YomvGqc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-93105508-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

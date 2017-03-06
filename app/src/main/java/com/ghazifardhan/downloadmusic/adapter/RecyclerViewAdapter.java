@@ -5,14 +5,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.esafirm.rxdownloader.RxDownloader;
+import com.ghazifardhan.downloadmusic.MainActivity;
 import com.ghazifardhan.downloadmusic.R;
 import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * Created by ghazifardhan on 05/03/17.
@@ -40,12 +46,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerViewAdapter.ViewHolder holder, int position) {
         holder.mTitle.setText(videoTitle.get(position));
+
+
+        holder.mBtnDownload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int adapterPosition = holder.getAdapterPosition();
+                String url = "http://www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v=" + videoId.get(adapterPosition);
+                RxDownloader.getInstance(context)
+                        .download(url, videoTitle.get(adapterPosition) + ".mp3", "audio/mpeg");
+            }
+        });
 
         Picasso.with(context)
                 .load(thumbnails.get(position))
                 .into(holder.mThumbnails);
+
+
     }
 
     @Override
@@ -57,12 +76,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         TextView mTitle;
         ImageView mThumbnails;
+        Button mBtnDownload;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             mThumbnails = (ImageView) itemView.findViewById(R.id.thumbnail_list);
             mTitle = (TextView) itemView.findViewById(R.id.video_title);
+            mBtnDownload = (Button) itemView.findViewById(R.id.buttonDownload);
         }
     }
 }
