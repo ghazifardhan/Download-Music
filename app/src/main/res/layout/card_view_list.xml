@@ -5,14 +5,14 @@
     android:id="@+id/card_view"
     android:clickable="true"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:foreground="?attr/selectableItemBackground"
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_height="match_parent">
+        android:layout_height="123dp">
 
         <ImageView
             android:id="@+id/thumbnail_list"
@@ -42,8 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonDownload"
             android:layout_below="@+id/video_title"
-            android:layout_alignStart="@+id/video_title"
-            android:layout_alignParentBottom="true" />
+            android:layout_alignStart="@+id/video_title" />
 
 
     </RelativeLayout>

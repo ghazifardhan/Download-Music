@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String apiKey = "AIzaSyAviKoCGH3Z4Cok1QFnmG5_4kIrpg65bUg";
     private static final String part = "snippet";
+    private static final Integer maxResults = 25;
+    private static final String order = "rating";
 
     ApiService service;
 
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
         String query = searchText.getText().toString();
 
-        Call<Youtube> call = service.getData(apiKey, part, query);
+        Call<Youtube> call = service.getData(apiKey, part, maxResults, order, query);
         call.enqueue(new Callback<Youtube>() {
             @Override
             public void onResponse(Call<Youtube> call, Response<Youtube> response) {

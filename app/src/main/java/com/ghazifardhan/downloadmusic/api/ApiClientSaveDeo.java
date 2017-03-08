@@ -4,13 +4,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by ghazifardhan on 05/03/17.
+ * Created by ghazifardhan on 07/03/17.
  */
 
-public class ApiClient {
+public class ApiClientSaveDeo {
 
     public static Retrofit retrofit = null;
-    public static final String baseUrl = "https://www.googleapis.com/";
+    public static final String baseUrl = "https://savedeo.p.mashape.com/";
 
     public static Retrofit getClient(){
         if(retrofit==null){
