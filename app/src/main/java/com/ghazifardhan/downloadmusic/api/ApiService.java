@@ -26,5 +26,5 @@ public interface ApiService {
 
     // Youtube Data V3
     @GET("/youtube/v3/search")
-    Call<Youtube> getData(@Query("key") String apiKey, @Query("part") String snippet, @Query("maxResults") Integer maxResults,@Query("order") String order, @Query("q") String videoId);
+    Call<Youtube> getData(@Query("key") String apiKey, @Query("part") String snippet, @Query("maxResults") Integer maxResults, @Query("q") String videoId);
 }

@@ -99,7 +99,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         }
 
                         RxDownloader.getInstance(context)
-                                .download(downloadUrl, videoTitle.get(adapterPosition) + ".m4a", "audio/*");
+                                .download(downloadUrl, videoTitle.get(adapterPosition) + ".mp3", "audio/*");
                     }
 
                     @Override
